@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Skillbus</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.svg" type="image/x-icon">
+
+  <script prefer src="js/data.js"></script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="header__logo">
+      <img src="img/logo.svg" alt="" class="header__img">
+    </a>
+    <input type="text" class="header__input  filter" placeholder="Введите запрос">
+  </header>
+
+
+  <main>
+    <section class="section">
+      <h1 class="section__head">Клиенты</h1>
+      <table class="section__table table">
+
+        <tr class="table__head table__row">
+          <td class="table__id sort__on" id="id">
+            ID
+            <span class="table__id--span">
+              <svg width="8" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4L7.295 3.295L4.5 6.085L4.5 0L3.5 0L3.5 6.085L0.71 3.29L0 4L4 8L8 4Z" fill="#b89eff"/>
+              </svg>
+            </span>
+          </td>
+          <td class="table__fio" id="fio">
+            Фамилия Имя Отчество&nbsp;
+            <span class="table__id--span">
+              <svg width="8" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4L7.295 3.295L4.5 6.085L4.5 0L3.5 0L3.5 6.085L0.71 3.29L0 4L4 8L8 4Z" fill="#b89eff"/>
+              </svg>
+              А-Я
+            </span>
+          </td>
+          <td class="table__timeCreate" id="timeCreate">
+            Дата и время создания&nbsp;
+            <span class="table__timeCreate--span">
+              <svg width="8" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4L7.295 3.295L4.5 6.085L4.5 0L3.5 0L3.5 6.085L0.71 3.29L0 4L4 8L8 4Z" fill="#b89eff"/>
+              </svg>
+            </span>
+          </td>
+          <td class="table__timeChange" id="timeChange">
+            Последние изменения&nbsp;
+            <span class="table__timeChange--span">
+              <svg width="8" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4L7.295 3.295L4.5 6.085L4.5 0L3.5 0L3.5 6.085L0.71 3.29L0 4L4 8L8 4Z" fill="#b89eff"/>
+              </svg>
+            </span>
+          </td>
+          <td class="table__contact" id="contact">
+            Контакты
+          </td>
+          <td class="table__actions" id="actions">
+            Действия
+          </td>
+        </tr>
+      </table>
+      <button class="section__btn">
+        <svg class="section__svg" width="23" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z" fill="#9873FF"/>
+        </svg>
+        Добавить клиента
+      </button>
+    </section>
+  </main>
+
+
+
+
+  <section class="windows">
+
+    <div class="window__change">
+      <button class="change__close btn__close"></button>
+      <h2 class="change__head">Изменить данные<span class="change__id"></span></h2>
+      <form action="" class="change__form change-form">
+        <div class="change-form__top">
+          <label>
+            <p class="change-form__head">
+              Фамилия<span class="change-form__span">*</span>
+            </p>
+            <input type="text" class="change-form__input change-form__input--firstName">
+          </label>
+          <label>
+            <p class="change-form__head">
+              Имя<span class="change-form__span">*</span>
+            </p>
+            <input type="text" class="change-form__input change-form__input--secondName">
+          </label>
+          <label>
+            <p class="change-form__head">
+              Отчество<span class="change-form__span">*</span>
+            </p>
+            <input type="text" class="change-form__input change-form__input--thirdName">
+          </label>
+        </div>
+        <div class="change-form__middle">
+          <div class="add__contact" id="addContact">
+
+          </div>
+          <button class="change-form__btn" type="button">
+            Добавить контакт
+          </button>
+        </div>
+        <div class="change-form__mistake mistake__change">
+          <p class="mistake-change__text mistake"></p>
+        </div>
+        <div class="change-form__bottom">
+          <button class="change-form__submit btn__dark" type="button">Сохранить</button>
+          <button class="change-form__delete">Удалить клиента</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="window__add" id="block">
+      <button class="add__close btn__close"></button>
+      <h2 class="add__head">Новый клиент</h2>
+      <form action="" class="add__form add-form">
+        <div class="add-form__top">
+          <input type="text" class="add-form__input" id="add__firstName" placeholder="Фамилия*">
+          <input type="text" class="add-form__input" id="add__secondName" placeholder="Имя*">
+          <input type="text" class="add-form__input" id="add__thirdName" placeholder="Отчество">
+        </div>
+        <div class="add-form__middle">
+          <div class="add__contact2">
+          </div>
+          <button class="add-form__btn">
+            Добавить контакт
+          </button>
+        </div>
+        <div class="change-form__mistake mistake__add">
+          <p class="mistake-add__text mistake"></p>
+        </div>
+        <div class="add-form__bottom">
+          <button class="add-form__submit btn__dark" type="button">Сохранить</button>
+          <button class="add-form__delete">Отмена</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="window__delete">
+      <button class="delete__close btn__close"></button>
+      <h2 class="delete__head">Удалить клиента</h2>
+      <p class="delete__desc">Вы действительно хотите удалить данного клиента?</p>
+      <button class="delete__btn btn__dark">Удалить</button>
+      <button class="delete__cancel">Отмена</button>
+    </div>
+
+  </section>
+
+
+  <script src="js/choices.min.js"></script>
+  <script prefer src="https://unpkg.com/@popperjs/core@2"></script>
+  <script prefer src="https://unpkg.com/tippy.js@6"></script>
+</body>
+
+</html>
+
